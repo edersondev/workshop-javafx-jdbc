@@ -1,0 +1,16 @@
+version: '3'
+services:
+  dbmysql:
+    image: mysql:8
+    ports:
+      - "3306:3306"
+    volumes:
+      - dbcursojavafx:/var/lib/mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=123456x
+      - MYSQL_DATABASE=coursejdbc
+      - MYSQL_USER=developer
+      - MYSQL_PASSWORD=1234x
+    restart: unless-stopped
+volumes:
+  dbcursojavafx:
